@@ -1,13 +1,24 @@
+```html
 <!DOCTYPE html>
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teknologi Elektronik | KV Nibong Tebal</title>
+<title>Program Teknologi Elektronik CEB | KV Nibong Tebal</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --navy:#06265c;
+    --navy2:#0b3474;
+    --orange:#ff851b;
+    --orange2:#ff9d28;
+    --light:#f4f8fd;
+    --text:#17233d;
+    --muted:#667085;
+}
 
 *{
     margin:0;
@@ -21,398 +32,552 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#f7f7f7;
-    color:#222;
+    color:var(--text);
+    background:var(--light);
 }
 
 /* ================= HEADER ================= */
 
-header{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:20;
-    padding:20px 7%;
+.top-header{
+    background:white;
+    min-height:105px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    color:white;
+    padding:10px 5%;
 }
 
-.logo-area{
+.brand{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:18px;
 }
 
-.logo-area img{
-    width:65px;
-    height:65px;
+.brand img{
+    width:430px;
+    max-width:65vw;
+    height:82px;
     object-fit:contain;
-    background:white;
-    border-radius:12px;
-    padding:5px;
 }
 
-.logo-text h1{
-    font-size:16px;
-    line-height:1.3;
+.tagline{
+    color:var(--navy);
+    font-weight:700;
+    font-size:24px;
+    line-height:1.2;
+    text-align:right;
+    font-style:italic;
 }
 
-.logo-text p{
-    font-size:11px;
-    opacity:.85;
+/* ================= NAVIGATION ================= */
+
+.navbar{
+    background:var(--navy);
+    height:62px;
+    display:flex;
+    align-items:center;
+    padding:0 4%;
+    box-shadow:0 3px 10px rgba(0,0,0,.18);
+    position:relative;
+    z-index:20;
 }
 
-nav a{
+.navbar a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
-    font-size:13px;
-    font-weight:500;
+    padding:21px 25px;
+    font-weight:600;
+    font-size:15px;
+    white-space:nowrap;
 }
 
-nav a:hover{
-    color:#ffd65a;
+.navbar a:hover,
+.navbar a.active{
+    background:var(--orange);
+}
+
+.home{
+    font-size:22px !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:760px;
+    min-height:585px;
     position:relative;
     overflow:hidden;
-
     background:
-    linear-gradient(
-        90deg,
-        rgba(75,0,0,.96) 0%,
-        rgba(130,0,0,.82) 45%,
-        rgba(0,0,0,.35) 100%
-    ),
-    url("kv-nibong-tebal.jpg");
+        linear-gradient(
+            90deg,
+            rgba(4,34,82,.98) 0%,
+            rgba(5,40,91,.94) 35%,
+            rgba(5,45,95,.62) 60%,
+            rgba(5,45,95,.05) 100%
+        ),
+        url("kv-nibong-tebal.jpg");
 
     background-size:cover;
     background-position:center;
-    color:white;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(135deg,
+        transparent 0 78%,
+        var(--orange) 78% 81%,
+        transparent 81%);
+    opacity:.95;
 }
 
 .hero-inner{
-    width:86%;
-    max-width:1250px;
-    min-height:760px;
+    width:90%;
+    max-width:1400px;
+    min-height:585px;
     margin:auto;
     position:relative;
+    z-index:3;
     display:flex;
     align-items:center;
 }
 
 .hero-text{
-    width:55%;
-    padding-top:50px;
-    position:relative;
-    z-index:5;
+    width:58%;
+    color:white;
+    padding:30px 0 50px;
 }
 
-.kicker{
-    color:#ffd45a;
-    font-size:14px;
+.program-label{
+    display:inline-block;
+    border:2px solid var(--orange);
+    color:var(--orange2);
+    padding:9px 20px;
+    border-radius:30px;
     font-weight:700;
-    letter-spacing:3px;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-size:58px;
-    line-height:1.05;
-    font-weight:800;
+    font-size:17px;
     margin-bottom:20px;
 }
 
-.hero h2 span{
-    color:#ffd45a;
+.hero h1{
+    font-size:58px;
+    line-height:1.03;
+    font-weight:800;
+    margin-bottom:22px;
+    letter-spacing:-1px;
+}
+
+.hero h1 span{
+    color:var(--orange);
 }
 
 .hero-description{
-    max-width:610px;
+    max-width:650px;
     font-size:17px;
-    line-height:1.8;
-    color:#f5f5f5;
+    line-height:1.75;
+    color:white;
+    margin-bottom:28px;
 }
 
-.buttons{
-    margin-top:30px;
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 27px;
-    border-radius:30px;
     text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    margin-right:8px;
-    transition:.3s;
+    padding:13px 25px;
+    border-radius:30px;
+    font-weight:700;
+    transition:.25s;
 }
 
-.btn-yellow{
-    background:#ffd45a;
-    color:#750000;
-}
-
-.btn-yellow:hover{
-    transform:translateY(-3px);
-}
-
-.btn-white{
-    border:1px solid white;
+.btn-orange{
+    background:var(--orange);
     color:white;
 }
 
-.btn-white:hover{
-    background:white;
-    color:#750000;
+.btn-orange:hover{
+    background:#ff6f00;
+    transform:translateY(-3px);
 }
 
-/* ================= STUDENT ================= */
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--navy);
+}
+
+/* STUDENT */
 
 .student{
     position:absolute;
-    right:-2%;
-    bottom:0;
-    width:50%;
-    height:92%;
+    right:-4%;
+    bottom:-15px;
+    width:47%;
+    height:100%;
     display:flex;
-    justify-content:center;
     align-items:flex-end;
-    z-index:4;
+    justify-content:center;
 }
 
 .student img{
     max-width:100%;
-    max-height:100%;
+    max-height:95%;
     object-fit:contain;
-    filter:drop-shadow(0 18px 25px rgba(0,0,0,.5));
+    filter:drop-shadow(0 15px 20px rgba(0,0,0,.35));
 }
 
-/* ================= FLOATING LABEL ================= */
+/* SLOGAN */
 
-.badge{
+.hero-slogan{
     position:absolute;
-    right:40%;
-    bottom:18%;
-    z-index:7;
-    background:white;
-    color:#7a0000;
-    padding:13px 20px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    font-size:12px;
-    font-weight:700;
+    right:2%;
+    top:55px;
+    color:white;
+    text-align:center;
+    font-size:31px;
+    line-height:1.15;
+    font-weight:800;
+    font-style:italic;
+    transform:rotate(-2deg);
+    text-shadow:0 3px 8px rgba(0,0,0,.25);
 }
 
-.badge span{
+.hero-slogan span{
+    color:white;
+}
+
+.hero-slogan:after{
+    content:"";
     display:block;
-    color:#777;
-    font-size:10px;
-    font-weight:400;
+    width:140px;
+    height:5px;
+    background:var(--orange);
+    margin:10px auto 0;
+    transform:skewX(-25deg);
 }
 
-/* ================= SECTIONS ================= */
+/* ================= QUICK CARDS ================= */
 
-section.content{
-    padding:90px 7%;
+.quick-section{
+    background:#f4f8fd;
+    padding:30px 4% 50px;
+    position:relative;
+    z-index:5;
 }
 
-.container{
+.quick-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.quick-card{
+    background:white;
+    border-radius:18px;
+    padding:24px 18px 22px;
+    text-align:center;
+    min-height:190px;
+    box-shadow:0 8px 25px rgba(20,45,90,.08);
+    transition:.3s;
+}
+
+.quick-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(20,45,90,.14);
+}
+
+.quick-icon{
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    margin:0 auto 14px;
+    background:var(--orange);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:31px;
+}
+
+.quick-card:nth-child(even) .quick-icon{
+    background:var(--navy);
+}
+
+.quick-card h3{
+    font-size:17px;
+    color:var(--navy);
+    margin-bottom:9px;
+}
+
+.quick-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+.quick-line{
+    width:55px;
+    height:3px;
+    background:var(--orange);
+    margin:15px auto 0;
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+.section{
+    padding:80px 6%;
+}
+
+.section-inner{
     max-width:1200px;
     margin:auto;
 }
 
-.label{
-    color:#a00000;
-    font-size:13px;
-    font-weight:700;
+.section-label{
+    color:var(--orange);
+    font-size:14px;
+    font-weight:800;
     letter-spacing:2px;
     text-transform:uppercase;
     margin-bottom:8px;
 }
 
-.title{
+.section-title{
     font-size:38px;
-    line-height:1.2;
-    margin-bottom:20px;
+    color:var(--navy);
+    margin-bottom:22px;
 }
 
-.title span{
-    color:#a00000;
+.section-title span{
+    color:var(--orange);
 }
 
-.description{
-    color:#666;
-    line-height:1.8;
+.text{
+    color:#5d6677;
+    line-height:1.9;
 }
 
-/* ================= ABOUT ================= */
+/* ================= MATLAMAT ================= */
 
-.about{
+.white-section{
     background:white;
 }
 
-.about-grid{
+.two-column{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:55px;
+    gap:50px;
     align-items:center;
 }
 
-.college-photo{
-    position:relative;
-}
-
-.college-photo img{
+.college-image{
     width:100%;
-    height:420px;
+    height:400px;
     object-fit:cover;
-    border-radius:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
-}
-
-.photo-tag{
-    position:absolute;
-    left:25px;
-    bottom:25px;
-    background:white;
-    padding:12px 18px;
-    border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
-    font-size:12px;
-    font-weight:600;
-    color:#800000;
-}
-
-/* ================= CARDS ================= */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:45px;
-}
-
-.card{
-    background:white;
     border-radius:20px;
-    padding:32px 28px;
-    box-shadow:0 8px 30px rgba(0,0,0,.07);
-    border-top:4px solid #a00000;
-    transition:.3s;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.13);
+/* ================= OBJECTIVE ================= */
+
+.objectives{
+    display:grid;
+    gap:15px;
+    margin-top:25px;
 }
 
-.icon{
-    width:58px;
-    height:58px;
-    border-radius:15px;
-    background:#fff0f0;
+.objective{
+    display:flex;
+    gap:15px;
+    padding:17px;
+    background:#f5f8fc;
+    border-radius:12px;
+}
+
+.objective-number{
+    min-width:35px;
+    height:35px;
+    border-radius:50%;
+    background:var(--orange);
+    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:27px;
-    margin-bottom:18px;
+    font-weight:700;
 }
 
-.card h3{
-    color:#980000;
-    margin-bottom:12px;
-    font-size:20px;
-}
+/* ================= REQUIREMENTS ================= */
 
-.card p{
-    color:#666;
-    font-size:14px;
-    line-height:1.8;
-}
-
-/* ================= SKILLS ================= */
-
-.skills{
-    background:#f4f4f4;
-}
-
-.skill-grid{
+.requirements{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-top:40px;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:35px;
 }
 
-.skill{
+.requirement-box{
     background:white;
-    border-radius:15px;
-    padding:22px;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(20,45,90,.08);
+    border-top:5px solid var(--orange);
+}
+
+.requirement-box h3{
+    color:var(--navy);
+    margin-bottom:20px;
+}
+
+.requirement-box ol,
+.requirement-box ul{
+    padding-left:23px;
+}
+
+.requirement-box li{
+    margin-bottom:11px;
+    color:#596273;
+    line-height:1.6;
+}
+
+/* ================= NOSS ================= */
+
+.noss-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:35px;
+}
+
+.noss{
+    background:var(--navy);
+    color:white;
+    padding:28px;
+    border-radius:18px;
+}
+
+.noss-code{
+    color:var(--orange);
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+/* ================= COURSES ================= */
+
+.semesters{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:35px;
+}
+
+.semester{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 8px 25px rgba(20,45,90,.08);
+    border-left:5px solid var(--orange);
+}
+
+.semester h3{
+    color:var(--navy);
+    margin-bottom:17px;
+}
+
+.course{
     display:flex;
-    align-items:center;
-    gap:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.skill-icon{
-    font-size:27px;
-}
-
-.skill p{
-    color:#555;
+    gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid #edf0f5;
     font-size:14px;
 }
 
-/* ================= ADMISSION ================= */
+.course:last-child{
+    border-bottom:none;
+}
 
-.admission{
+.course-code{
+    color:var(--orange);
+    font-weight:800;
+    min-width:90px;
+}
+
+/* ================= CAREER ================= */
+
+.career-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:35px;
+}
+
+.career{
     background:white;
-}
-
-/* ================= CTA ================= */
-
-.cta{
-    padding:90px 7%;
+    border-radius:18px;
+    padding:35px 25px;
     text-align:center;
+    box-shadow:0 8px 25px rgba(20,45,90,.08);
+}
+
+.career-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.career h3{
+    color:var(--navy);
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:var(--navy);
     color:white;
-
-    background:
-    linear-gradient(
-        rgba(120,0,0,.93),
-        rgba(160,0,0,.88)
-    ),
-    url("kv-nibong-tebal.jpg");
-
-    background-size:cover;
-    background-position:center;
 }
 
-.cta h2{
-    font-size:40px;
-    margin-bottom:12px;
+.contact .section-title{
+    color:white;
 }
 
-.cta p{
-    margin-bottom:28px;
-    color:#eee;
+.contact-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    margin-top:30px;
+}
+
+.contact-item{
+    padding:22px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:15px;
+}
+
+.contact-item h3{
+    color:var(--orange);
+    margin-bottom:10px;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#171717;
-    color:#aaa;
+    background:#03183c;
+    color:#b9c4d7;
     text-align:center;
-    padding:32px 20px;
-    font-size:12px;
+    padding:30px 20px;
+    font-size:13px;
 }
 
 footer strong{
@@ -421,25 +586,29 @@ footer strong{
 
 /* ================= MOBILE ================= */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-    header{
-        padding:15px 5%;
-    }
-
-    nav{
+    .tagline{
         display:none;
     }
 
+    .navbar{
+        overflow-x:auto;
+    }
+
+    .navbar a{
+        padding:20px 15px;
+        font-size:12px;
+    }
+
     .hero{
-        min-height:850px;
+        min-height:800px;
     }
 
     .hero-inner{
-        min-height:850px;
-        width:90%;
+        min-height:800px;
         display:block;
-        padding-top:150px;
+        padding-top:100px;
     }
 
     .hero-text{
@@ -447,76 +616,107 @@ footer strong{
         text-align:center;
     }
 
-    .hero h2{
-        font-size:39px;
+    .hero h1{
+        font-size:43px;
     }
 
     .hero-description{
-        font-size:14px;
+        margin-left:auto;
+        margin-right:auto;
     }
 
     .student{
-        width:100%;
-        height:42%;
-        right:0;
+        width:75%;
+        height:43%;
+        right:12%;
     }
 
-    .badge{
-        right:8%;
-        bottom:28%;
+    .hero-slogan{
+        display:none;
     }
 
-    .about-grid{
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .two-column{
         grid-template-columns:1fr;
     }
 
-    .cards{
+    .requirements,
+    .noss-grid,
+    .semesters,
+    .contact-box{
         grid-template-columns:1fr;
     }
 
-    .skill-grid{
+    .career-grid{
         grid-template-columns:1fr;
-    }
-
-    .college-photo img{
-        height:300px;
-    }
-
-    .title{
-        font-size:30px;
-    }
-
-    .cta h2{
-        font-size:30px;
     }
 }
 
-@media(max-width:480px){
+@media(max-width:600px){
 
-    .logo-area img{
-        width:52px;
-        height:52px;
+    .top-header{
+        min-height:75px;
+        padding:8px 4%;
     }
 
-    .logo-text h1{
+    .brand img{
+        width:280px;
+        height:60px;
+        max-width:90vw;
+    }
+
+    .navbar{
+        height:50px;
+    }
+
+    .navbar a{
+        padding:16px 12px;
+    }
+
+    .hero{
+        min-height:720px;
+    }
+
+    .hero-inner{
+        min-height:720px;
+        padding-top:85px;
+    }
+
+    .program-label{
         font-size:12px;
     }
 
-    .logo-text p{
-        font-size:9px;
+    .hero h1{
+        font-size:34px;
     }
 
-    .hero h2{
-        font-size:32px;
+    .hero-description{
+        font-size:13px;
     }
 
     .student{
-        height:38%;
+        width:90%;
+        right:5%;
+        height:40%;
     }
 
-    .badge{
-        font-size:10px;
-        padding:10px 14px;
+    .quick-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 5%;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .college-image{
+        height:280px;
     }
 }
 </style>
@@ -524,39 +724,39 @@ footer strong{
 
 <body>
 
+<!-- HEADER -->
 
-<!-- ================= HEADER ================= -->
+<header class="top-header">
 
-<header>
-
-    <div class="logo-area">
-
+    <div class="brand">
         <img src="logo-kvnt.jpg"
-             alt="Logo Kolej Vokasional Nibong Tebal">
-
-        <div class="logo-text">
-
-            <h1>KOLEJ VOKASIONAL<br>NIBONG TEBAL</h1>
-
-            <p>Kementerian Pendidikan Malaysia</p>
-
-        </div>
-
+             alt="Kolej Vokasional Nibong Tebal">
     </div>
 
-    <nav>
-
-        <a href="#utama">UTAMA</a>
-        <a href="#program">PROGRAM</a>
-        <a href="#kemahiran">KEMAHIRAN</a>
-        <a href="#kemasukan">KEMASUKAN</a>
-
-    </nav>
+    <div class="tagline">
+        Pilihan Utama<br>
+        Pendidikan Vokasional
+    </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a href="#utama" class="active home">⌂ Utama</a>
+    <a href="#matlamat">Tentang CEB</a>
+    <a href="#kemasukan">Kemasukan</a>
+    <a href="#kursus">Program</a>
+    <a href="#kursus">Kursus</a>
+    <a href="#kerjaya">Prospek Kerjaya</a>
+    <a href="#hubungi">Hubungi Kami</a>
+
+</nav>
+
+
+<!-- HERO -->
 
 <section class="hero" id="utama">
 
@@ -564,80 +764,148 @@ footer strong{
 
         <div class="hero-text">
 
-            <div class="kicker">
-                PROGRAM TEKNOLOGI ELEKTRONIK
+            <div class="program-label">
+                PROGRAM TEKNOLOGI ELEKTRONIK · CEB
             </div>
 
-            <h2>
-                BINA MASA DEPAN<br>
-                DENGAN <span>TEKNOLOGI</span>
-            </h2>
+            <h1>
+                Membina Kemahiran<br>
+                <span>Mencipta Inovasi</span>
+            </h1>
 
             <p class="hero-description">
-                Program Teknologi Elektronik (CEB) melahirkan
-                murid yang berpengetahuan, berkemahiran dan
-                mempunyai nilai serta etika profesional dalam
-                bidang teknologi elektrik dan elektronik.
+                Program Teknologi Elektronik (CEB) di Kolej Vokasional
+                Nibong Tebal membentuk murid berpengetahuan,
+                berkemahiran serta mempunyai nilai dan etika profesional
+                dalam bidang teknologi elektrik dan elektronik.
             </p>
 
-            <div class="buttons">
+            <div class="hero-buttons">
 
-                <a href="#program" class="btn btn-yellow">
-                    KENALI PROGRAM
+                <a href="#matlamat" class="btn btn-orange">
+                    › &nbsp; Terokai Program
                 </a>
 
-                <a href="#kemasukan" class="btn btn-white">
-                    SYARAT KEMASUKAN
+                <a href="#kemasukan" class="btn btn-outline">
+                    Syarat Kemasukan
                 </a>
 
             </div>
 
         </div>
 
-
-        <!-- GAMBAR STUDENT -->
 
         <div class="student">
 
             <img src="student.jpeg"
-                 alt="Pelajar Teknologi Elektronik">
+                 alt="Pelajar Program Teknologi Elektronik">
 
         </div>
 
-          </div>
+
+        <div class="hero-slogan">
+            Ilmu<br>
+            Kemahiran<br>
+            Masa Depan
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ================= TENTANG PROGRAM ================= -->
+<!-- QUICK MENU -->
 
-<section class="content about" id="program">
+<section class="quick-section">
 
-    <div class="container about-grid">
+    <div class="quick-grid">
 
-        <div class="college-photo">
-
-            <img src="kv-nibong-tebal.jpg"
-                 alt="Kolej Vokasional Nibong Tebal">
-
-            <div class="photo-tag">
-                🏫 Kolej Vokasional Nibong Tebal
+        <a href="#matlamat" style="text-decoration:none">
+            <div class="quick-card">
+                <div class="quick-icon">🎯</div>
+                <h3>Matlamat Program</h3>
+                <p>
+                    Melahirkan murid berpengetahuan,
+                    berkemahiran dan beretika profesional.
+                </p>
+                <div class="quick-line"></div>
             </div>
+        </a>
 
-        </div>
 
+        <a href="#objektif" style="text-decoration:none">
+            <div class="quick-card">
+                <div class="quick-icon">📖</div>
+                <h3>Objektif Program</h3>
+                <p>
+                    Mencapai kecemerlangan akademik
+                    dan kemahiran industri.
+                </p>
+                <div class="quick-line"></div>
+            </div>
+        </a>
+
+
+        <a href="#kemasukan" style="text-decoration:none">
+            <div class="quick-card">
+                <div class="quick-icon">👥</div>
+                <h3>Syarat Kemasukan</h3>
+                <p>
+                    Maklumat lengkap syarat umum
+                    dan khusus.
+                </p>
+                <div class="quick-line"></div>
+            </div>
+        </a>
+
+
+        <a href="#kursus" style="text-decoration:none">
+            <div class="quick-card">
+                <div class="quick-icon">⚙️</div>
+                <h3>Kursus & Kemahiran</h3>
+                <p>
+                    Kurikulum berasaskan industri
+                    dan teknologi terkini.
+                </p>
+                <div class="quick-line"></div>
+            </div>
+        </a>
+
+
+        <a href="#kerjaya" style="text-decoration:none">
+            <div class="quick-card">
+                <div class="quick-icon">💼</div>
+                <h3>Prospek Kerjaya</h3>
+                <p>
+                    Bina masa depan bersama
+                    industri dan teknologi.
+                </p>
+                <div class="quick-line"></div>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MATLAMAT -->
+
+<section class="section white-section" id="matlamat">
+
+    <div class="section-inner two-column">
 
         <div>
 
-            <div class="label">
-                TENTANG PROGRAM
+            <div class="section-label">
+                Tentang CEB
             </div>
 
-            <h2 class="title">
-                Program Teknologi <span>Elektronik</span>
+            <h2 class="section-title">
+                Matlamat <span>Program</span>
             </h2>
 
-            <p class="description">
+            <p class="text">
 
                 Program Teknologi Elektronik (CEB) bermatlamat
                 melahirkan murid yang berpengetahuan, berkemahiran
@@ -650,74 +918,76 @@ footer strong{
 
         </div>
 
+        <div>
+
+            <img src="kv-nibong-tebal.jpg"
+                 class="college-image"
+                 alt="Kolej Vokasional Nibong Tebal">
+
+        </div>
+
     </div>
 
 </section>
 
 
-<!-- ================= MATLAMAT ================= -->
+<!-- OBJEKTIF -->
 
-<section class="content">
+<section class="section" id="objektif">
 
-    <div class="container">
+    <div class="section-inner">
 
-        <div class="label">
-            KENALI CEB
+        <div class="section-label">
+            KSKV Program CEB
         </div>
 
-        <h2 class="title">
-            Matlamat & <span>Objektif Program</span>
+        <h2 class="section-title">
+            Objektif <span>Program</span>
         </h2>
 
+        <p class="text">
+            KSKV Program CEB bertujuan membolehkan murid mencapai
+            objektif berikut:
+        </p>
 
-        <div class="cards">
 
+        <div class="objectives">
 
-            <div class="card">
-
-                <div class="icon">🎯</div>
-
-                <h3>Matlamat Program</h3>
-
-                <p>
-                    Melahirkan murid yang berpengetahuan,
-                    berkemahiran serta mempunyai nilai dan etika
-                    profesional sebagai persediaan untuk menceburi
-                    kerjaya atau melanjutkan pelajaran.
-                </p>
-
+            <div class="objective">
+                <div class="objective-number">1</div>
+                <div>
+                    Mempamerkan pengetahuan, pemahaman dan kemahiran
+                    kognitif yang menepati keperluan industri dalam
+                    bidang teknologi elektrik dan elektronik.
+                </div>
             </div>
 
-
-            <div class="card">
-
-                <div class="icon">⚡</div>
-
-                <h3>Teknologi Elektronik</h3>
-
-                <p>
-                    Memberikan pendedahan kepada konsep,
-                    komponen, litar dan sistem elektronik serta
-                    aplikasi teknologi dalam industri.
-                </p>
-
+            <div class="objective">
+                <div class="objective-number">2</div>
+                <div>
+                    Menunjukkan tahap kemahiran yang menepati
+                    keperluan industri dalam bidang teknologi
+                    elektrik dan elektronik.
+                </div>
             </div>
 
-
-            <div class="card">
-
-                <div class="icon">🚀</div>
-
-                <h3>Potensi Pelajar</h3>
-
-                <p>
-                    Membentuk pelajar yang mempunyai kemahiran
-                    teknikal, kreativiti, disiplin dan etika kerja
-                    profesional.
-                </p>
-
+            <div class="objective">
+                <div class="objective-number">3</div>
+                <div>
+                    Menunjukkan kemahiran personal dan kemahiran
+                    keusahawanan dalam bidang teknologi elektrik
+                    dan elektronik.
+                </div>
             </div>
 
+            <div class="objective">
+                <div class="objective-number">4</div>
+                <div>
+                    Mempamerkan etika dan profesionalisme, dan
+                    tanggungjawab dalam bidang teknologi elektrik
+                    dan elektronik.
+                </div>
+            </div>
 
         </div>
 
@@ -726,159 +996,79 @@ footer strong{
 </section>
 
 
-<!-- ================= KEMAHIRAN ================= -->
+<!-- SYARAT KEMASUKAN -->
 
-<section class="content skills" id="kemahiran">
+<section class="section white-section" id="kemasukan">
 
-    <div class="container">
+    <div class="section-inner">
 
-        <div class="label">
-            PEMBELAJARAN
+        <div class="section-label">
+            Kemasukan Pelatih
         </div>
 
-        <h2 class="title">
-            Kemahiran Yang <span>Dipelajari</span>
-        </h2>
-
-
-        <div class="skill-grid">
-
-
-            <div class="skill">
-
-                <div class="skill-icon">🔌</div>
-
-                <p>
-                    Mengenal pasti dan menggunakan komponen
-                    elektronik.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-icon">🔧</div>
-
-                <p>
-                    Membina dan menguji litar elektronik.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-icon">📐</div>
-
-                <p>
-                    Membuat pengukuran menggunakan peralatan
-                    elektronik.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-icon">🛠️</div>
-
-                <p>
-                    Mengesan dan membaiki kerosakan litar.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-icon">💻</div>
-
-                <p>
-                    Mengaplikasikan teknologi elektronik dalam
-                    projek.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-icon">👨‍🔬</div>
-
-                <p>
-                    Mengamalkan keselamatan dan etika kerja.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= KEMASUKAN ================= -->
-
-<section class="content admission" id="kemasukan">
-
-    <div class="container">
-
-        <div class="label">
-            SERTAI KAMI
-        </div>
-
-        <h2 class="title">
+        <h2 class="section-title">
             Syarat <span>Kemasukan</span>
         </h2>
 
 
-        <div class="cards">
+        <div class="requirements">
 
+            <div class="requirement-box">
 
-            <div class="card">
+                <h3>1. Syarat Umum</h3>
 
-                <div class="icon">🇲🇾</div>
+                <ol>
 
-                <h3>Warganegara Malaysia</h3>
+                    <li>Pemohon adalah Warganegara Malaysia.</li>
 
-                <p>
-                    Memenuhi syarat kemasukan yang ditetapkan
-                    bagi program Kolej Vokasional.
-                </p>
+                    <li>Lepasan Tingkatan 3 tahun sebelum kemasukkan ke KV.</li>
 
-            </div>
+                    <li>Mendaftar dalam Modul Pengurusan Murid.</li>
 
+                    <li>WAJIB menduduki Pentaksiran Kemasukan Sekolah Khusus (PKSK).</li>
 
-            <div class="card">
+                    <li>Mempunyai pelaporan Pentaksiran Bilik Darjah (PBD),
+                    Pentaksiran Aktiviti Jasmani, Sukan dan Kokurikulum
+                    (PAJSK) dan Pentaksiran Psikometrik (PPsi).</li>
 
-                <div class="icon">🎓</div>
+                    <li>Sihat tubuh badan.</li>
 
-                <h3>Minat Teknologi</h3>
+                    <li>Tiada sebarang kecederaan/sejarah penyakit yang
+                    menghadkan, membataskan dan menyukarkan pelaksanaan
+                    kerja praktikal dan amali.</li>
 
-                <p>
-                    Mempunyai minat terhadap bidang elektrik,
-                    elektronik dan teknologi.
-                </p>
+                    <li>TIDAK rabun warna/buta warna.</li>
 
-            </div>
+                    <li>Berminat dengan program dipohon.</li>
 
-
-            <div class="card">
-
-                <div class="icon">🔬</div>
-
-                <h3>Pembelajaran Amali</h3>
-
-                <p>
-                    Bersedia mengikuti pembelajaran teori dan
-                    latihan amali.
-                </p>
+                </ol>
 
             </div>
 
+
+            <div class="requirement-box">
+
+                <h3>2. Syarat Khusus</h3>
+
+                <p class="text">
+                    Murid memperoleh sekurang-kurangnya Tahap
+                    Penguasaan 3 Pentaksiran Bilik Darjah (PBD)
+                    bagi mata pelajaran berikut iaitu:
+                </p>
+
+                <br>
+
+                <ul>
+
+                    <li>Bahasa Melayu</li>
+                    <li>Bahasa Inggeris</li>
+                    <li>Matematik</li>
+                    <li>Sains</li>
+                    <li>Reka Bentuk dan Teknologi / Asas Sains Komputer</li>
+
+                </ul>
+
+            </div>
 
         </div>
 
@@ -887,26 +1077,271 @@ footer strong{
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- NOSS -->
 
-<section class="cta">
+<section class="section" id="noss">
 
-    <h2>
-        Bina Masa Depan Bersama CEB
-    </h2>
+    <div class="section-inner">
 
-    <p>
-        Program Teknologi Elektronik · Kolej Vokasional Nibong Tebal
-    </p>
+        <div class="section-label">
+            Standard Kemahiran
+        </div>
 
-    <a href="#utama" class="btn btn-yellow">
-        KEMBALI KE ATAS
-    </a>
+        <h2 class="section-title">
+            Kod / Program <span>NOSS</span>
+        </h2>
+
+
+        <div class="noss-grid">
+
+            <div class="noss">
+
+                <div class="noss-code">
+                    C261-001-2:2020
+                </div>
+
+                <p>
+                    Pengujian, Pengesanan Kerosakan dan
+                    Penyelenggaraan Komponen dan Papan Elektronik
+                </p>
+
+            </div>
+
+
+            <div class="noss">
+
+                <div class="noss-code">
+                    C261-001-3:2020
+                </div>
+
+                <p>
+                    Penyeliaan dan Pengesanan Kerosakan Komponen
+                    dan Papan Elektronik
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- KURSUS -->
+
+<section class="section white-section" id="kursus">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            Struktur Pembelajaran
+        </div>
+
+        <h2 class="section-title">
+            Kursus Yang <span>Ditawarkan</span>
+        </h2>
+
+
+        <div class="semesters">
+
+
+            <!-- SEMESTER 1 -->
+
+            <div class="semester">
+
+                <h3>Semester 1</h3>
+
+                <div class="course">
+                    <span class="course-code">CEB1112</span>
+                    <span>Pengenalan Bahagian Elektronik</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB1124</span>
+                    <span>Pengujian Papan Litar Tercetak (PCB)</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB1132</span>
+                    <span>Prosedur Operasi Standard</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB1144</span>
+                    <span>Pengendalian Peranti Sedang Diuji</span>
+                </div>
+
+            </div>
+
+
+            <!-- SEMESTER 2 -->
+
+            <div class="semester">
+
+                <h3>Semester 2</h3>
+
+                <div class="course">
+                    <span class="course-code">CEB2113</span>
+                    <span>Keperluan Pengesanan Kerosakan Tahap Satu</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB2125</span>
+                    <span>Proses Pengesanan Kerosakan Tahap Satu</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB2133</span>
+                    <span>Penggantian Komponen Elektronik</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB2143</span>
+                    <span>Penyenggaraan In-Circuit Tester (ICT)</span>
+                </div>
+
+            </div>
+
+
+            <!-- SEMESTER 3 -->
+
+            <div class="semester">
+
+                <h3>Semester 3</h3>
+
+                <div class="course">
+                    <span class="course-code">CEB3114</span>
+                    <span>Verifikasi Prestasi In-Circuit Tester (ICT)</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB3124</span>
+                    <span>Keperluan Pengesanan Kerosakan Tahap Dua</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB3133</span>
+                    <span>Penyeliaan Komponen dan Papan Elektronik</span>
+                </div>
+
+            </div>
+
+
+            <!-- SEMESTER 4 -->
+
+            <div class="semester">
+
+                <h3>Semester 4</h3>
+
+                <div class="course">
+                    <span class="course-code">CEB4114</span>
+                    <span>Proses Pengesanan Kerosakan Tahap Dua</span>
+                </div>
+
+                <div class="course">
+                    <span class="course-code">CEB4125</span>
+                    <span>Verifikasi Prestasi Penguji Fungsi PCBA</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KERJAYA -->
+
+<section class="section" id="kerjaya">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            Masa Depan Pelajar
+        </div>
+
+        <h2 class="section-title">
+            Prospek <span>Kerjaya</span>
+        </h2>
+
+
+        <div class="career-grid">
+
+            <div class="career">
+                <div class="career-icon">🔧</div>
+                <h3>Juruteknik Elektronik</h3>
+            </div>
+
+            <div class="career">
+                <div class="career-icon">⚡</div>
+                <h3>Jurutera Elektronik</h3>
+            </div>
+
+            <div class="career">
+                <div class="career-icon">🧰</div>
+                <h3>Pembantu Jurutera Peralatan Elektronik</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HUBUNGI -->
+
+<section class="section contact" id="hubungi">
+
+    <div class="section-inner">
+
+        <div class="section-label">
+            Hubungi Kami
+        </div>
+
+        <h2 class="section-title">
+            Kolej Vokasional <span>Nibong Tebal</span>
+        </h2>
+
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <h3>📍 Alamat</h3>
+
+                <p>
+                    Kolej Vokasional Nibong Tebal<br>
+                    Jalan Bukit Panchor<br>
+                    14300, Nibong Tebal<br>
+                    Pulau Pinang
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>☎️ Telefon</h3>
+
+                <p>
+                    04-5932904<br>
+                    04-5939059
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
