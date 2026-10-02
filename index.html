@@ -600,6 +600,145 @@ footer strong{
     color:white;
 }
 
+    /* =====================================================
+   ANNOUNCEMENT / LATEST INFO
+===================================================== */
+
+.announcement-section{
+    background:white;
+    padding:75px 5%;
+    overflow:hidden;
+}
+
+.announcement-inner{
+    max-width:1320px;
+    margin:auto;
+}
+
+.announcement-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.announcement-heading .label{
+    color:var(--orange);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.announcement-heading h2{
+    color:var(--navy);
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.announcement-heading h2 span{
+    color:var(--orange);
+}
+
+.announcement-heading p{
+    color:#737b8c;
+    font-size:14px;
+}
+
+.announcement-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.announcement-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(20,45,90,.12);
+    border:1px solid #edf0f5;
+    transition:.3s;
+    text-decoration:none;
+    display:block;
+}
+
+.announcement-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(20,45,90,.18);
+}
+
+.announcement-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.announcement-content{
+    padding:22px;
+}
+
+.announcement-date{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:7px;
+}
+
+.announcement-content h3{
+    color:var(--navy);
+    font-size:18px;
+    line-height:1.4;
+    margin-bottom:8px;
+}
+
+.announcement-content p{
+    color:#687386;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.announcement-more{
+    display:inline-block;
+    margin-top:15px;
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+}
+
+.announcement-more:hover{
+    color:var(--orange);
+}
+
+@media(max-width:1000px){
+
+    .announcement-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .announcement-section{
+        padding:55px 5%;
+    }
+
+    .announcement-heading h2{
+        font-size:30px;
+    }
+
+    .announcement-grid{
+        grid-template-columns:1fr;
+    }
+
+    .announcement-image{
+        height:210px;
+    }
+
+}
+
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -756,8 +895,11 @@ footer strong{
 
     <a href="#kursus">Kursus</a>
 
+    <a href="#announcement">Info Terkini</a>
+
+
     <a href="https://drive.google.com/drive/folders/1baCWfIUPX1jOiCFRByWUgI7wosUmZWd-?usp=sharing" target="_blank">
-        ⬇ Download Kurikulum
+    Download Kurikulum
     </a>
 
     <a href="#kerjaya">Prospek Kerjaya</a>
@@ -1393,6 +1535,65 @@ footer strong{
 
 </section>
 
+    <!-- =====================================================
+     ANNOUNCEMENT / LATEST INFO
+===================================================== -->
+
+<section class="announcement-section" id="announcement">
+
+    <div class="announcement-inner">
+
+        <div class="announcement-heading">
+
+            <div class="label">
+                Announcement
+            </div>
+
+            <h2>
+                LATEST <span>INFO</span>
+            </h2>
+
+            <p>
+                Pengumuman, aktiviti dan maklumat terkini
+                Program Teknologi Elektronik CEB
+            </p>
+
+        </div>
+
+
+        <div class="announcement-grid">
+
+
+            <!-- ANNOUNCEMENT 1 -->
+
+            <a href="#" class="announcement-card">
+
+                <img src="announcement1.jpg"
+                     class="announcement-image"
+                     alt="Pengumuman Program CEB">
+
+                <div class="announcement-content">
+
+                    <div class="announcement-date">
+                        Pengumuman
+                    </div>
+
+                    <h3>
+                        Pengambilan Pelajar Program CEB
+                    </h3>
+
+                    <p>
+                        Maklumat terkini berkaitan kemasukan
+                        ke Program Teknologi Elektronik.
+                    </p>
+
+                    <span class="announcement-more">
+                        Lihat Selanjutnya →
+                    </span>
+
+                </div>
+
+            </a>
 
 <!-- =====================================================
      HUBUNGI
