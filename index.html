@@ -549,6 +549,42 @@ body{
     font-size:17px;
 }
 
+     <!-- =====================================================
+     ANNOUNCEMENT / LATEST INFO
+===================================================== -->
+
+    .announcement-slider{
+    overflow:hidden;
+    width:100%;
+    position:relative;
+}
+
+.announcement-track{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation: announcementSlide 20s linear infinite;
+}
+
+.announcement-card{
+    flex:0 0 360px;
+}
+
+@keyframes announcementSlide{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
+
+.announcement-slider:hover .announcement-track{
+    animation-play-state:paused;
+}
 /* =====================================================
    CONTACT
 ===================================================== */
@@ -1561,8 +1597,9 @@ footer strong{
             </p>
 
         </div>
- <div class="announcement-grid">
-
+        
+<div class="announcement-slider">
+    <div class="announcement-track">
 
             <!-- ANNOUNCEMENT 1 -->
 
