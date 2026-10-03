@@ -355,6 +355,42 @@ body{
     line-height:1.9;
 }
 
+         <!-- =====================================================
+     ANNOUNCEMENT / LATEST INFO
+===================================================== -->
+
+    .announcement-slider{
+    overflow:hidden;
+    width:100%;
+    position:relative;
+}
+
+.announcement-track{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation: announcementSlide 20s linear infinite;
+}
+
+.announcement-card{
+    flex:0 0 360px;
+}
+
+@keyframes announcementSlide{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
+
+.announcement-slider:hover .announcement-track{
+    animation-play-state:paused;
+}
 /* =====================================================
    MATLAMAT
 ===================================================== */
@@ -549,42 +585,6 @@ body{
     font-size:17px;
 }
 
-     <!-- =====================================================
-     ANNOUNCEMENT / LATEST INFO
-===================================================== -->
-
-    .announcement-slider{
-    overflow:hidden;
-    width:100%;
-    position:relative;
-}
-
-.announcement-track{
-    display:flex;
-    gap:25px;
-    width:max-content;
-    animation: announcementSlide 20s linear infinite;
-}
-
-.announcement-card{
-    flex:0 0 360px;
-}
-
-@keyframes announcementSlide{
-
-    0%{
-        transform:translateX(0);
-    }
-
-    100%{
-        transform:translateX(-50%);
-    }
-
-}
-
-.announcement-slider:hover .announcement-track{
-    animation-play-state:paused;
-}
 /* =====================================================
    CONTACT
 ===================================================== */
@@ -925,6 +925,8 @@ footer strong{
 
     <a href="#utama" class="active home">⌂ &nbsp; Utama</a>
 
+    <a href="#announcement">Info Terkini</a>
+
     <a href="#matlamat">Tentang CEB</a>
 
     <a href="#kemasukan">Kemasukan</a>
@@ -933,7 +935,7 @@ footer strong{
 
     <a href="#kursus">Kursus</a>
 
-    <a href="#announcement">Info Terkini</a>
+    
 
 
     <a href="https://drive.google.com/drive/folders/1baCWfIUPX1jOiCFRByWUgI7wosUmZWd-?usp=sharing" target="_blank">
@@ -1124,6 +1126,74 @@ footer strong{
 
 </section>
 
+      <!-- =====================================================
+     ANNOUNCEMENT / LATEST INFO
+===================================================== -->
+
+    <section class="announcement-section" id="announcement">
+
+    <div class="announcement-inner">
+
+        <div class="announcement-heading">
+
+            <div class="label">
+                PENGUMUMAN
+            </div>
+
+            <h2>
+                INFO <span>TERKINI</span>
+            </h2>
+
+            <p>
+                Pengumuman, aktiviti dan maklumat terkini
+                Program Teknologi Elektronik CEB
+            </p>
+
+        </div>
+        
+<div class="announcement-slider">
+    <div class="announcement-track">
+
+            <!-- ANNOUNCEMENT 1 -->
+
+<a href="announcement1.png"
+   target="_blank"
+   class="announcement-card">
+
+    <img src="announcement1.png"
+         class="announcement-image"
+         alt="Pengumuman Program CEB">
+
+    <div class="announcement-content">
+
+        <div class="announcement-date">
+            MAKLUMAT
+        </div>
+
+        <h3>
+            SEMAKAN PENTAKSIRAN KERJA KURSUS (PKK)
+            SEM 3 AMBILAN 2025
+        </h3>
+
+        <p>
+            Semakan PKK bersama Pegawai Penilai (PP)
+            boleh dibuat pada 10 Ogos 2026 (Isnin)
+            bermula 10 pagi.
+        </p>
+
+        <span class="announcement-more">
+            Lihat Selanjutnya →
+        </span>
+
+    </div>
+
+</a>
+
+     </div>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
      MATLAMAT
@@ -1573,74 +1643,7 @@ footer strong{
 
 </section>
 
-    <!-- =====================================================
-     ANNOUNCEMENT / LATEST INFO
-===================================================== -->
-
-    <section class="announcement-section" id="announcement">
-
-    <div class="announcement-inner">
-
-        <div class="announcement-heading">
-
-            <div class="label">
-                PENGUMUMAN
-            </div>
-
-            <h2>
-                INFO <span>TERKINI</span>
-            </h2>
-
-            <p>
-                Pengumuman, aktiviti dan maklumat terkini
-                Program Teknologi Elektronik CEB
-            </p>
-
-        </div>
-        
-<div class="announcement-slider">
-    <div class="announcement-track">
-
-            <!-- ANNOUNCEMENT 1 -->
-
-<a href="announcement1.png"
-   target="_blank"
-   class="announcement-card">
-
-    <img src="announcement1.png"
-         class="announcement-image"
-         alt="Pengumuman Program CEB">
-
-    <div class="announcement-content">
-
-        <div class="announcement-date">
-            MAKLUMAT
-        </div>
-
-        <h3>
-            SEMAKAN PENTAKSIRAN KERJA KURSUS (PKK)
-            SEM 3 AMBILAN 2025
-        </h3>
-
-        <p>
-            Semakan PKK bersama Pegawai Penilai (PP)
-            boleh dibuat pada 10 Ogos 2026 (Isnin)
-            bermula 10 pagi.
-        </p>
-
-        <span class="announcement-more">
-            Lihat Selanjutnya →
-        </span>
-
-    </div>
-
-</a>
-
-     </div>
-
-    </div>
-
-</section>
+  
 <!-- =====================================================
      HUBUNGI
 ===================================================== -->
